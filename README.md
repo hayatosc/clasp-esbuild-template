@@ -13,7 +13,7 @@ pnpm exec clasp login
 Then, create Apps Script. If you already made a project, you can copy from `.clasp.json.copy` to `.clasp.json`
 
 ```bash
-npx clasp create --type standalone
+pnpm clasp create --type standalone
 ```
 
 Change `rootDir` property on your `.clasp.json`.
@@ -27,3 +27,24 @@ Change `rootDir` property on your `.clasp.json`.
 ```
 
 Finally, run `pnpm run deploy`!
+
+## Development
+
+The entrypoint of scripts is `src/main.ts`.
+
+### Sample
+
+```typescript
+function main() {
+  console.log('test');
+}
+
+declare let global: any;
+global.main = main;
+```
+
+All function must be registered on `global`.
+
+## License
+
+MIT
