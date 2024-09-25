@@ -47,7 +47,7 @@ All function must be registered on `global`.
 
 ### Testing
 
-You can use `vitest` as testing library.
+You can use `vitest` as testing library. Make sure test files are under the `test` directory.
 
 ```typescript
 import { main } from '../src/main';
