@@ -1,6 +1,6 @@
 # clasp-esbuild-template
 
-A template for Google Apps Script, TypeScript and ESBuild. You can use TypeScript feature and `import` or `export` syntax.
+A template for Google Apps Script, TypeScript, ESBuild and Vitest. You can use TypeScript feature and `import` or `export` syntax.
 
 ## Setup
 
@@ -44,6 +44,22 @@ global.main = main;
 ```
 
 All function must be registered on `global`.
+
+### Testing
+
+You can use `vitest` as testing library.
+
+```typescript
+import { main } from '../src/main';
+
+describe('This is test sample', () => {
+  const consoleSpy = vi.spyOn(console, 'log');
+  test('console.log', () => {
+    main();
+    expect(console.log).toHaveBeenCalled();
+  });
+});
+```
 
 ## License
 
